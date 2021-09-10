@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animation</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>This is an animation example</h1>
+        <p>Clicking the button below will cause the square to move back and forth</p>
+        <button type="button">Click Me!</button>
+        <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+    </body>
+    <script>
+        var1 = 0
+        $("button").click(function(){
+            if (var1 == 0) {
+                $("div").animate({left: '250px'});
+                var1 = 1;
+            }
+            else {
+                $("div").animate({left: '0px'});
+                var1 = 0;
+            }
+        }); 
+    </script>
+</html>
