@@ -2,26 +2,54 @@
 <html>
     <head>
         <title>Calculator</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
+        <h1>This is a calculator example</h1>
         <div>
-            <h1>This is a calculator example</h1>
-            <input type="number", id="number1"> + 
-            <input type="number", id="number2">
-            <button type="button">Add!</button>
+            <p>Number 1: <input type="number", id="number1"></p>
         </div>
         <div>
-            <p, id=answer></p>
+            <p>Number 2: <input type="number", id="number2"></p>
+        </div>
+        <div>
+            <p>
+                <button type="button", onclick="add()">Add!</button>
+                <button type="button", onclick="subtract()">Subtract!</button>
+                <button type="button", onclick="">Multiply!</button>
+            </p>
+        </div>
+        <div>
+            <p id=answer>The answer will appear here</p>
         </div> 
     </body>
     <script>
-        var1 = 0
-        $("button").click(function(){
+        // Function to update the answer field when a result has been calculated
+        function updateAnswer(answer){
+            if (isNaN(answer)){
+                document.getElementById("answer").innerHTML = "You did not enter an answer :(";
+            }
+            else {
+                document.getElementById("answer").innerHTML = "The answer is: " + answer;
+            }
+        }
+        // Function to add the two numbers
+        function add(){
             var num1 = parseInt(document.getElementById("number1").value);
             var num2 = parseInt(document.getElementById("number2").value);
             var answer = num1 + num2;
-            document.getElementById("answer").innerHTML = "The answer is: "+answer;
-        }); 
+            updateAnswer(answer);
+        }; 
+        // Function to subtract the two numbers
+        function subtract(){
+            var num1 = parseInt(document.getElementById("number1").value);
+            var num2 = parseInt(document.getElementById("number2").value);
+            var answer = num1 - num2;
+            updateAnswer(answer);
+        };
+        // Function to multiply the two numbers
+        // This function has been left purposely blank for you to fill in
+        function multiply(){
+            // Insert your code here
+        };
     </script>
 </html>
